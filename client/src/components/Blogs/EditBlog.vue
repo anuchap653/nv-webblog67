@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Edit Blog</h1>
+    <h1>แก้ไขสินค้า</h1>
     <form v-on:submit.prevent="editBlog">
       <p>ชื่อสินค้า : <input type="text" v-model="blog.title" /></p>
       <transition name="fade">
@@ -46,17 +46,13 @@
         </li>
       </transition-group>
       <div class="clearfix"></div>
-      <p><strong>content:</strong></p>
-      <vue-ckeditor
-        v-model.lazy="blog.content"
-        :config="config"
-        @blur="onBlur($event)"
-        @focus="onFocus($event)"
-      />
-      <p>category: <input type="text" v-model="blog.category" /></p>
-      <p>status: <input type="text" v-model="blog.status" /></p>
+     
+      <p>รายละเอียด : <input type="text" v-model="blog.content" /></p>
+
+      <p>ราคา: <input type="text" v-model="blog.category" /></p>
+      <p>จำนวน: <input type="text" v-model="blog.status" /></p>
       <p>
-        <button type="submit">update blog</button>
+        <button type="submit">ยืนยัน</button>
         <button v-on:click="navigateTo('/blogs')">กลับ</button>
       </p>
     </form>

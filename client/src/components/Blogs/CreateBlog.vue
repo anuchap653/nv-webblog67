@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>เพิ่มส</h1>
+    <h1>เพิ่มสินค้า</h1>
     <form v-on:submit.prevent="createBlog">
       <p>
         ชื่อสินค้า:

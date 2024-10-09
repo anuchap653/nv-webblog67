@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h1>Get All Users</h1>
+    <div><h1>จำนวนผู้ใช้งาน: {{ users.length }}</h1> </div>
+
     <div><button v-on:click="navigateTo('/user/create')">สร้างผู้ใช้</button></div>
     <hr>
     <div v-if="users.length">
-      <div><b>จำนวนผู้ใช้งาน:</b> {{ users.length }}</div>
       <div v-for="user in users" v-bind:key="user.id">
-        <div><b>id:</b> {{ user.id }}</div>
+        <!-- <div><b>id:</b> {{ user.id }}</div> -->
         <div><b>ชื่อผู้ใช้:</b> {{ user.name }} {{ user.lastname }}</div>
         <div><b>อีเมล:</b> {{ user.email }}</div>
-        <div><b>status:</b> {{ user.status }}</div>
-        <div><b>type:</b> {{ user.type }}</div>
+        <!-- <div><b>status:</b> {{ user.status }}</div> -->
+        <!-- <div><b>type:</b> {{ user.type }}</div> -->
         <div>
           <button v-on:click="navigateTo('/user/'+user.id)">ดูข้อมูล</button>
           <button v-on:click="navigateTo('/user/edit/'+user.id)">แก้ไขข้อมูล</button>
