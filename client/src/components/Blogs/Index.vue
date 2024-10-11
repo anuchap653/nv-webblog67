@@ -6,7 +6,7 @@
         <p><button class="btn success" v-on:click="navigateTo('/blog/create')">เพิ่มสินค้า</button></p>
 
         <div v-for="blog in blogs" v-bind:key="blog.id" class="blog-card">
-            <h3><strong>ชื่อสินค้า:</strong> {{ blog.title }}</h3>
+            <h3><strong>ชื่อสินค้า:</strong> {{ blog.pname }}</h3>
 
             <!-- แสดงรูปภาพ Thumbnail -->
             <transition name="fade">
@@ -15,11 +15,13 @@
                 </div>
             </transition>
 
-            <p><strong>รายละเอียด:</strong> {{ blog.content }}</p>
-            <p><strong>ราคา:</strong> {{ blog.category }}</p>
-            <p><strong>จำนวน:</strong> {{ blog.status }}</p>
+            <p><strong>รายละเอียด:</strong> {{ blog.detail }}</p>
+            <p><strong>ราคา:</strong> {{ blog.price }}</p>
+            <p><strong>จำนวน:</strong> {{ blog.num }}</p>
 
             <p class="actions">
+                
+                <button type="button" class="btn info" v-on:click="navigateTo('/blog/'+ blog.id)">ดูสินค้า</button>
                 <button class="btn warning" v-on:click="navigateTo('/blog/edit/' + blog.id)">แก้ไขสินค้า</button>
                 <button class="btn danger" v-on:click="deleteBlog(blog)">ลบสินค้า</button>
             </p>
@@ -156,6 +158,13 @@ h2, h4 {
 
 .btn.danger:hover {
     background-color: #c0392b;
+}
+.btn.info {
+    background-color: #24b0c5;
+    color: #fff;
+}
+.btn.info:hover {
+    background-color: #138496;
 }
 
 hr {

@@ -2,7 +2,7 @@
   <div>
     <h1>แก้ไขสินค้า</h1>
     <form v-on:submit.prevent="editBlog">
-      <p>ชื่อสินค้า : <input type="text" v-model="blog.title" /></p>
+      <p>ชื่อสินค้า : <input type="text" v-model="blog.pname" /></p>
       <transition name="fade">
         <div class="thumbnail-pic" v-if="blog.thumbnail != 'null'">
           <img :src="BASE_URL + blog.thumbnail" alt="thumbnail" />
@@ -47,10 +47,10 @@
       </transition-group>
       <div class="clearfix"></div>
      
-      <p>รายละเอียด : <input type="text" v-model="blog.content" /></p>
+      <p>รายละเอียด : <input type="text" v-model="blog.detail" /></p>
 
-      <p>ราคา: <input type="text" v-model="blog.category" /></p>
-      <p>จำนวน: <input type="text" v-model="blog.status" /></p>
+      <p>ราคา: <input type="text" v-model="blog.price" /></p>
+      <p>จำนวน: <input type="text" v-model="blog.num" /></p>
       <p>
         <button type="submit">ยืนยัน</button>
         <button v-on:click="navigateTo('/blogs')">กลับ</button>
@@ -82,12 +82,12 @@ export default {
       pictures: [],
       pictureIndex: 0,
       blog: {
-        title: "",
+        pname: "",
         thumbnail: "null",
         pictures: "null",
-        content: "",
-        category: "",
-        status: "",
+        detail: "",
+        price: "",
+        num: "",
       },
       config: {
         toolbar: [
