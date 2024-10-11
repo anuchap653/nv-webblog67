@@ -22,15 +22,15 @@ module.exports = (sequelize, DataTypes) => {
         status: DataTypes.STRING,
         type: DataTypes.STRING
     }, {
-        hooks: {
-            beforeCreate: hashPassword,
-            beforeUpdate: hashPassword
-        }
+        // hooks: {
+        //     beforeCreate: hashPassword,
+        //     beforeUpdate: hashPassword
+        // }
     })
 
-    User.prototype.comparePassword = function (password) {
-        return bcrypt.compareSync(password, this.password)
-    }
+    // User.prototype.comparePassword = function (password) {
+    //     return bcrypt.compareSync(password, this.password)
+    // }
 
     User.associate = function (models) { }
 

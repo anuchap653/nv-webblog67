@@ -3,7 +3,7 @@
     <h1>User Login</h1>
     <form v-on:submit.prevent="onLogin" class="login-form">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email">อีเมล</label>
         <input
           type="email"
           id="email"
@@ -13,7 +13,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">รหัสผ่าน</label>
         <input
           type="password"
           id="password"
@@ -23,10 +23,10 @@
         />
       </div>
       <button type="submit" class="btn">Login</button>
-      <div class="error" v-if="error">{{ error }}</div>
+      <div class="error" v-if="error">ข้อมูลไม่ถูกต้อง</div>
     </form>
     <!-- เพิ่มปุ่มเพื่อไปยังหน้าสร้างผู้ใช้ใหม่ -->
-    <button @click="navigateToAddUser" class="btn-add-user">Register</button>
+    <button @click="navigateToAddUser" class="btn-add-user">สร้างบัญชี</button>
   </div>
 </template>
 

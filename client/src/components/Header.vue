@@ -4,7 +4,7 @@
       <ul class="nav">
         <li><router-link :to="{ name: 'blogs' }">Product</router-link></li>
 
-        <!-- <li><router-link :to="{ name: 'users' }">Users</router-link></li> -->
+        <li><router-link :to="{ name: 'users' }">Users</router-link></li>
         <!-- <div><b>ชื่อผู้ใช้:</b> {{ user.name }} {{ user.lastname }}</div> -->
         <li class="right">
           <!-- แสดงปุ่ม Logout ถ้าผู้ใช้เข้าสู่ระบบแล้ว -->
@@ -14,9 +14,10 @@
           </div>
           <!-- แสดงลิงก์ Login ถ้าผู้ใช้ยังไม่ได้เข้าสู่ระบบ -->
           <div v-else>
-            <button class="btn-logout" @click="logout">Logout</button>
+            
+            <a @click.prevent="logout">Logout</a>
 
-            <router-link :to="{ name: 'login' }">Login</router-link>
+            {{ user.name }}<router-link :to="{ name: 'login' }">Login</router-link>
 
           </div>
         </li>
@@ -105,4 +106,5 @@ export default {
 .btn-logout:hover {
   background-color: #d4881f;
 }
+
 </style>

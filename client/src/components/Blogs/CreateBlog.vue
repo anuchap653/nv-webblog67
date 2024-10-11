@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>เพิ่มสินค้า</h1>
+    <h1><center>เพิ่มสินค้า</center></h1>
     <form v-on:submit.prevent="createBlog">
       <p>
         ชื่อสินค้า:
@@ -62,7 +62,8 @@
         <input type="text" v-model="blog.num" />
       </p>
       <p>
-        <button type="submit">เพิ่มสินค้า</button>
+        <button type="submit" class = "btn success">เพิ่มสินค้า</button>
+        
       </p>
     </form>
   </div>
@@ -241,4 +242,21 @@ ul.pictures li img {
 .thumbnail-pic img {
   width: 200px;
 }
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.btn.success:hover {
+    background-color: #27ae60;
+}
+
 </style>

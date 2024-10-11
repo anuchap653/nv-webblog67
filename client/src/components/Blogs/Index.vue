@@ -13,6 +13,7 @@
                 <div class="thumbnail-pic" v-if="blog.thumbnail && blog.thumbnail !== 'null'">
                     <img :src="BASE_URL + blog.thumbnail" alt="Thumbnail" />
                 </div>
+                
             </transition>
 
             <p><strong>รายละเอียด:</strong> {{ blog.detail }}</p>
@@ -179,5 +180,20 @@ hr {
 
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
     opacity: 0;
+}
+/* จัดสไตล์พื้นหลังและกรอบ */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 70px;
+  background: #ecbd96;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+body {
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 </style>
